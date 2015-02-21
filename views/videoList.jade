@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	ul 
+		for video in videos
+			li= video.name
+			li= video.title
+			li= video.description
+			li!= video.url
+			//- iframe(width="360",height='315',src='#{video.url}',frameborder='0',allowfullscreen)
+
+
+	div.return-home
+		a(action="return",href='/') return Home
+
+	div.vote.button 
+		a(action="vote",href='/paired-videos.jade') Vote
+
+
+
+	
+
+
+

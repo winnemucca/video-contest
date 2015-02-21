@@ -1,0 +1,34 @@
+extends layout
+
+block content
+
+	h1 Video competition
+	.container
+		.row
+			.col-md-6
+				p= vid1.name
+				p!= vid1.url
+			.col-md-6
+				p= vid2.name
+				p!= vid2.url
+
+	//- h1 below 
+	//- ol.paired-videos
+	//- 	for chunk in chunks 
+	//- 		for item in chunk
+	//- 			li.item= item
+	//- 			li.indices 1 #{item.name[0]} & #{item.name[1]}
+	//- 			li! #{item[0]} vs #{item[1]}
+	//- 			//- li votes
+
+	for chunk in chunks 
+			.paired-videos
+				//- p!= video.name video.url
+				p #{chunk[0].name} #{chunk[0].url}vs
+				p #{chunk[1].name} #{chunk[1].url}
+				p!= chunk[1].url
+
+	//- ol.paired-videos
+	//- 	for chunk in chunks 
+	//- 		li: span #{chunk[0].name} vs #{chunk[1].name}
+

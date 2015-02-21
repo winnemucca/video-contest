@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	h1 Life is Good When Contest
+
+	p.description We believe that life is good, and to serve as a reminder we often video tape some of our best moments.  Share a video that helps our viewers see how good life can!!!!!!!
+
+	if videolength 
+		h1 Content is full
+		p= videolength
+
+	else 
+		form.entryForm(action="/formHandle",method="post")
+			input(type="text", name="name",placeholder="name")
+			input(type="text", name="url",placeholder="url to youtube video")
+			input(type="text", name="title",placeholder="title")
+			input(type="text", name="description",placeholder="description")
+			input.submission(type="submit")
+
+	div.view-submissions
+		a(action='submissions', href='/videoList') View submissions
+
+
+	//- ** equation on notes call variable after embed #{}
+
+
+	
